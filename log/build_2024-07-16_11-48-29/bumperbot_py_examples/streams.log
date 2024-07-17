@@ -1,0 +1,25 @@
+[1.857s] Invoking command in '/home/minhnguyen/bumperbot_ws/src/bumperbot_py_examples': PYTHONPATH=/home/minhnguyen/bumperbot_ws/build/bumperbot_py_examples/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/minhnguyen/bumperbot_ws/install/bumperbot_py_examples/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/bumperbot_py_examples build --build-base /home/minhnguyen/bumperbot_ws/build/bumperbot_py_examples/build install --record /home/minhnguyen/bumperbot_ws/build/bumperbot_py_examples/install.log --single-version-externally-managed install_data
+[2.467s] running egg_info
+[2.468s] writing ../../build/bumperbot_py_examples/bumperbot_py_examples.egg-info/PKG-INFO
+[2.468s] writing dependency_links to ../../build/bumperbot_py_examples/bumperbot_py_examples.egg-info/dependency_links.txt
+[2.473s] writing entry points to ../../build/bumperbot_py_examples/bumperbot_py_examples.egg-info/entry_points.txt
+[2.482s] writing requirements to ../../build/bumperbot_py_examples/bumperbot_py_examples.egg-info/requires.txt
+[2.482s] writing top-level names to ../../build/bumperbot_py_examples/bumperbot_py_examples.egg-info/top_level.txt
+[2.485s] reading manifest file '../../build/bumperbot_py_examples/bumperbot_py_examples.egg-info/SOURCES.txt'
+[2.487s] writing manifest file '../../build/bumperbot_py_examples/bumperbot_py_examples.egg-info/SOURCES.txt'
+[2.487s] running build
+[2.487s] running build_py
+[2.488s] copying bumperbot_py_examples/simple_subscriber.py -> /home/minhnguyen/bumperbot_ws/build/bumperbot_py_examples/build/lib/bumperbot_py_examples
+[2.489s] running install
+[2.489s] running install_lib
+[2.490s] copying /home/minhnguyen/bumperbot_ws/build/bumperbot_py_examples/build/lib/bumperbot_py_examples/simple_subscriber.py -> /home/minhnguyen/bumperbot_ws/install/bumperbot_py_examples/lib/python3.10/site-packages/bumperbot_py_examples
+[2.491s] byte-compiling /home/minhnguyen/bumperbot_ws/install/bumperbot_py_examples/lib/python3.10/site-packages/bumperbot_py_examples/simple_subscriber.py to simple_subscriber.cpython-310.pyc
+[2.492s] running install_data
+[2.492s] running install_egg_info
+[2.495s] removing '/home/minhnguyen/bumperbot_ws/install/bumperbot_py_examples/lib/python3.10/site-packages/bumperbot_py_examples-0.0.0-py3.10.egg-info' (and everything under it)
+[2.498s] Copying ../../build/bumperbot_py_examples/bumperbot_py_examples.egg-info to /home/minhnguyen/bumperbot_ws/install/bumperbot_py_examples/lib/python3.10/site-packages/bumperbot_py_examples-0.0.0-py3.10.egg-info
+[2.500s] running install_scripts
+[2.541s] Installing simple_publisher script to /home/minhnguyen/bumperbot_ws/install/bumperbot_py_examples/lib/bumperbot_py_examples
+[2.542s] Installing simple_subscriber script to /home/minhnguyen/bumperbot_ws/install/bumperbot_py_examples/lib/bumperbot_py_examples
+[2.543s] writing list of installed files to '/home/minhnguyen/bumperbot_ws/build/bumperbot_py_examples/install.log'
+[2.621s] Invoked command in '/home/minhnguyen/bumperbot_ws/src/bumperbot_py_examples' returned '0': PYTHONPATH=/home/minhnguyen/bumperbot_ws/build/bumperbot_py_examples/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/minhnguyen/bumperbot_ws/install/bumperbot_py_examples/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/bumperbot_py_examples build --build-base /home/minhnguyen/bumperbot_ws/build/bumperbot_py_examples/build install --record /home/minhnguyen/bumperbot_ws/build/bumperbot_py_examples/install.log --single-version-externally-managed install_data
