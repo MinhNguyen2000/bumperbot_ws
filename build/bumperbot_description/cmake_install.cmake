@@ -47,6 +47,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     "/home/minhnguyen/bumperbot_ws/src/bumperbot_description/meshes"
     "/home/minhnguyen/bumperbot_ws/src/bumperbot_description/urdf"
     "/home/minhnguyen/bumperbot_ws/src/bumperbot_description/launch"
+    "/home/minhnguyen/bumperbot_ws/src/bumperbot_description/models"
     "/home/minhnguyen/bumperbot_ws/src/bumperbot_description/rviz"
     )
 endif()
