@@ -6,6 +6,7 @@
 /home/minhnguyen/bumperbot_ws/install/bumperbot_description/share/bumperbot_description/meshes/caster_rear_link.STL
 /home/minhnguyen/bumperbot_ws/install/bumperbot_description/share/bumperbot_description/urdf/bumperbot_gazebo.xacro
 /home/minhnguyen/bumperbot_ws/install/bumperbot_description/share/bumperbot_description/urdf/bumperbot.urdf.xacro
+/home/minhnguyen/bumperbot_ws/install/bumperbot_description/share/bumperbot_description/urdf/bumperbot_ros2_control.xacro
 /home/minhnguyen/bumperbot_ws/install/bumperbot_description/share/bumperbot_description/launch/gazebo.launch.py
 /home/minhnguyen/bumperbot_ws/install/bumperbot_description/share/bumperbot_description/launch/display.launch.py
 /home/minhnguyen/bumperbot_ws/install/bumperbot_description/share/bumperbot_description/models/sun/model-1_3.sdf
