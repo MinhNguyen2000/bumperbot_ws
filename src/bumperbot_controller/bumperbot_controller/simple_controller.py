@@ -21,7 +21,7 @@ class SimpleController(Node):
 
         self.wheel_cmd_pub_ = self.create_publisher(
             Float64MultiArray,                          # Type of the message published in the simple_velocity_controller/commands topic
-            "simple_velocity_controller/commands",      # The topic over which the simple_velocity_controller sends the velocity commands to the wheels
+            "simple_velocity_controller/commands",      # The topic over which the simple_velocity_controller sends the velocity commands to the wheels on the gazebo simulation
             10
         )
 
