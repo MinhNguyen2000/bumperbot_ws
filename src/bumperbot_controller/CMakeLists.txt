@@ -14,7 +14,7 @@ find_package(geometry_msgs REQUIRED)
 ament_python_install_package(${PROJECT_NAME})
 
 install(
-  DIRECTORY config launch bumperbot_controller
+  DIRECTORY config launch
   DESTINATION share/${PROJECT_NAME}
 )
 

@@ -33,8 +33,8 @@ class SimpleController(Node):
         )
 
         self.speed_conversion_ = np.array([
-            [self.wheel_radius / 2, self.wheel_radius / 2],
-            [self.wheel_radius / self.wheel_separation, -self.wheel_radius / self.wheel_separation]
+            [self.wheel_radius_ / 2, self.wheel_radius_ / 2],
+            [self.wheel_radius_ / self.wheel_separation_, -self.wheel_radius_ / self.wheel_separation_]
         ])
 
         self.get_logger().info("The conversion matrix is %s" % self.speed_conversion_)
@@ -45,7 +45,7 @@ class SimpleController(Node):
         # 2. Calculate the required wheel speed using the speed_conversion_ matrix
         # 3. Send the wheel speed command to the topic simple_velocity_controller/commands
 
-        robot_speed = np.aray([[msg.twist.linear.x],
+        robot_speed = np.array([[msg.twist.linear.x],
                                [msg.twist.angular.z]])
         # robot_speed is the array containing the extracted values from the received message from the bumperbot_controller/cmd_vel
         # The velocity component aligned with the x axis of the robot and the angular velocity about the z axis of the robot are extracted
@@ -64,6 +64,6 @@ def main():
     rclpy.spin(simple_controller)
     simple_controller.destroy_node()
     rclpy.shutdown()
-    
+
 if __name__ == "__main__":
     main()

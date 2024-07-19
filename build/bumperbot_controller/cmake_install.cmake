@@ -70,7 +70,6 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/bumperbot_controller" TYPE DIRECTORY FILES
     "/home/minhnguyen/bumperbot_ws/src/bumperbot_controller/config"
     "/home/minhnguyen/bumperbot_ws/src/bumperbot_controller/launch"
-    "/home/minhnguyen/bumperbot_ws/src/bumperbot_controller/bumperbot_controller"
     )
 endif()
 
