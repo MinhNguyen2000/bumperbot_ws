@@ -1,8 +1,8 @@
 <?xml version = "1.0"?>
 
-<robot name = "bumperbot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot name="bumperbot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-    <transmission name = "wheel_right_transmission">
+    <!-- <transmission name = "wheel_right_transmission">
         <plugin>transmission_interface/SimpleTransmission</plugin>
         <actuator name = "wheel_right_motor" role = "actuator_right"/>
         <joint name = "wheel_right_joint" role = "joint_right">
@@ -16,8 +16,9 @@
         <joint name = "wheel_right_left" role = "joint_left">
             <mechanical_reduction>1.0</mechanical_reduction>
         </joint>
-    </transmission>
+    </transmission> -->
 
+    <!-- Wheels -->
     <gazebo reference = "wheel_right_link">
         <mu1>100000000000000.0</mu1>        <!-- High friction coeff to avoid slipage -->
         <mu2>100000000000000.0</mu2>
@@ -38,6 +39,7 @@
         <fdir1>1 0 0</fdir1>                <!-- Direction of wheel rotation -->
     </gazebo>
 
+    <!-- Castor Wheels-->
     <gazebo reference = "castor_front_link">
         <mu1>0.1</mu1>                    <!-- High friction coeff to avoid slipage -->
         <mu2>0.1</mu2>
@@ -57,10 +59,24 @@
     </gazebo>
 
     <gazebo>
+        <xacro:if value = "$(arg is_ignition)">
+            <plugin filename="ign_ros2_control-system" name="ign_ros2_control::IgnitionROS2ControlPlugin">
+                <parameters>$(find bumperbot_controller)/config/bumperbot_controllers.yaml</parameters>
+            </plugin>
+        </xacro:if>
+
+        <xacro:unless value="$(arg is_ignition)">
+            <plugin filename = "gz_ros2_control-system" name = "gz_ros2_control::GazeboSimROS2ControlPlugin">
+                <parameters>$(find bumperbot_controller)/config/bumperbot_controllers.yaml</parameters>
+            </plugin>
+        </xacro:unless>
+    </gazebo>
+
+    <!-- <gazebo>
         <plugin filename = "libgazebo_ros2_control.so" name = "gazebo_ros2_control">
             <robot_param>robot_description</robot_param>
             <robot_param_node>robot_state_publisher</robot_param_node>
             <parameters>$(find bumperbot_controller)/config/bumperbot_controllers.yaml</parameters>
         </plugin>
-    </gazebo>
+    </gazebo> -->
 </robot>

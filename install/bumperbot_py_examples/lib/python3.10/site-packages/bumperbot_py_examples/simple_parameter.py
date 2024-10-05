@@ -7,15 +7,18 @@ class SimpleParameter(Node):
     def __init__(self):                                             # Constructor of the node
         super().__init__("simple_parameter")                        # Node name
 
-        self.declare_parameter("simple_int_param", 23)              # Function inherited from the Node class to define the name of the variable
+        # Declare parameters and default value w/ a function inherited from the Node class
+        self.declare_parameter("simple_int_param", 23)              
         self.declare_parameter("simple_string_param", "Minh")
 
-        self.add_on_set_parameters_callback(self.paramChangeCallback) # Whenever a parameter is change during node runtime, the callback function is executed
+        # Define a callback function when parameters are changed at runtime
+        self.add_on_set_parameters_callback(self.paramChangeCallback) 
 
     def paramChangeCallback(self, params):
         result = SetParametersResult()
 
-        for param in params:                                        # Loop through all of the parameters that have changed
+        # Loop through all of the parameters that have changed
+        for param in params:                                        
             if param.name == "simple_int_param" and param.type_ == Parameter.Type.INTEGER:
                 self.get_logger().info("Param simple_int_param changed! New value is %d" % param.value)
                 result.successful = True
