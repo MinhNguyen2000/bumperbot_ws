@@ -15,7 +15,12 @@ class SimpleTurtleSimKinematics(Node):
             self.turtle1PoseCallback,     # Callback function that executes when this subscriber node receives a message on the topicc
             10                              # Queue size
         )
-        self.turtle2_pose_sub_ = self.create_subscription(Pose, '/turtle2/pose', self.turtle2PoseCallback, 10)
+        self.turtle2_pose_sub_ = self.create_subscription(
+            Pose, 
+            '/turtle2/pose', 
+            self.turtle2PoseCallback, 
+            10
+        )
         
         self.last_turtle1_pose_ = Pose()     # Creating two instances of the pose message to capture the last turtle pose
         self.last_turtle2_pose_ = Pose()

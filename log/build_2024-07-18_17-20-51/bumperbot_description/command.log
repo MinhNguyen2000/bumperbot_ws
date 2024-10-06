@@ -1,4 +1,0 @@
-Invoking command in '/home/minhnguyen/bumperbot_ws/build/bumperbot_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/minhnguyen/bumperbot_ws/build/bumperbot_description -- -j8 -l8
-Invoked command in '/home/minhnguyen/bumperbot_ws/build/bumperbot_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/minhnguyen/bumperbot_ws/build/bumperbot_description -- -j8 -l8
-Invoking command in '/home/minhnguyen/bumperbot_ws/build/bumperbot_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/minhnguyen/bumperbot_ws/build/bumperbot_description
-Invoked command in '/home/minhnguyen/bumperbot_ws/build/bumperbot_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/minhnguyen/bumperbot_ws/build/bumperbot_description

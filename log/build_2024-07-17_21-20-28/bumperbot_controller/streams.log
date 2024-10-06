@@ -1,7 +1,0 @@
-[0.065s] Invoking command in '/home/minhnguyen/bumperbot_ws/build/bumperbot_controller': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/minhnguyen/bumperbot_ws/src/bumperbot_controller -DCMAKE_INSTALL_PREFIX=/home/minhnguyen/bumperbot_ws/install/bumperbot_controller
-[0.084s] -- Configuring incomplete, errors occurred!
-[0.094s] [31mCMake Error at CMakeLists.txt:23:
-[0.094s]   Parse error.  Expected a command name, got unquoted argument with text "`".
-[0.095s] 
-[0.095s] [0m
-[0.814s] Invoked command in '/home/minhnguyen/bumperbot_ws/build/bumperbot_controller' returned '1': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/minhnguyen/bumperbot_ws/src/bumperbot_controller -DCMAKE_INSTALL_PREFIX=/home/minhnguyen/bumperbot_ws/install/bumperbot_controller

@@ -1,2 +1,0 @@
-[0.058s] Invoking command in '/home/minhnguyen/bumperbot_ws/build/bumperbot_cpp_examples': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/minhnguyen/bumperbot_ws/build/bumperbot_cpp_examples -- -j8 -l8
-[0.808s] Invoked command in '/home/minhnguyen/bumperbot_ws/build/bumperbot_cpp_examples' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/minhnguyen/bumperbot_ws/build/bumperbot_cpp_examples -- -j8 -l8

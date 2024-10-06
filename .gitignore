@@ -1,0 +1,4 @@
+# Compilation, final output, and runtime logs
+build/
+install/
+log/

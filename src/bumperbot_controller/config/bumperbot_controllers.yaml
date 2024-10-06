@@ -20,6 +20,7 @@ simple_velocity_controller:
      - wheel_left_joint
      - wheel_right_joint
 
+# Parameters of the DiffDriveController
 bumperbot_controller:
   ros__parameters:
     type: diff_drive_controller/DiffDriveController

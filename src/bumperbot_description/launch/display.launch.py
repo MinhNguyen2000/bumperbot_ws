@@ -18,6 +18,7 @@ def generate_launch_description():
 
     model_arg = DeclareLaunchArgument(
         name = "model",
+        default_value = os.path.join(bumperbot_description_dir,"urdf","bumperbot.urdf.xacro"),
         description = "Absolute path to robot URDF file"
     )
 
