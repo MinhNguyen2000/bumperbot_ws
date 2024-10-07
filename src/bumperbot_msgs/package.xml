@@ -1,24 +1,20 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>bumperbot_controller</name>
+  <name>bumperbot_msgs</name>
   <version>0.0.0</version>
   <description>TODO: Package description</description>
-  <maintainer email="caominh11122000@gmail.com">minhnguyen</maintainer>
+  <maintainer email="mnguyen6@unb.ca">minhnguyen</maintainer>
   <license>TODO: License declaration</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
-  <!--Build tool for Python scripts-->
-  <buildtool_depend>ament_cmake_python</buildtool_depend>
 
-  <!--Dependencies for the controller launch file-->
-  <exec_depend>ros2launch</exec_depend>
-  <exec_depend>controller_manager</exec_depend>
-
-  <!--Dependencies for the Python script-->
-  <depend>rclpy</depend>
   <depend>std_msgs</depend>
-  <depend>geometry_msgs</depend>
+  <build_depend>rosidl_defaul_generators</build_depend>
+
+  <exec_depend>rosidl_default_runtime</exec_depend>
+
+  <member_of_group>rosidl_interface_packages</member_of_group>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>

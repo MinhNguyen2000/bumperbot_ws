@@ -8,6 +8,17 @@
   <license>TODO: License declaration</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
+  <!--Build tool for Python scripts-->
+  <buildtool_depend>ament_cmake_python</buildtool_depend>
+
+  <!--Dependencies for the controller launch file-->
+  <exec_depend>ros2launch</exec_depend>
+  <exec_depend>controller_manager</exec_depend>
+
+  <!--Dependencies for the Python script-->
+  <depend>rclpy</depend>
+  <depend>std_msgs</depend>
+  <depend>geometry_msgs</depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>

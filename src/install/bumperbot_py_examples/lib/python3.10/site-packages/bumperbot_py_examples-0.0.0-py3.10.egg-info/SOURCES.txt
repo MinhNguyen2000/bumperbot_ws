@@ -11,7 +11,10 @@ setup.py
 bumperbot_py_examples/__init__.py
 bumperbot_py_examples/simple_parameter.py
 bumperbot_py_examples/simple_publisher.py
+bumperbot_py_examples/simple_service_server.py
 bumperbot_py_examples/simple_subscriber.py
+bumperbot_py_examples/simple_tf_kinematics.py
+bumperbot_py_examples/simple_turtlesim_kinematics.py
 resource/bumperbot_py_examples
 test/test_copyright.py
 test/test_flake8.py

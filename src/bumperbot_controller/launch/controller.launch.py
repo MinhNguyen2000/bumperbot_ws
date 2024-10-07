@@ -82,7 +82,7 @@ def generate_launch_description():
                 ],
             ),
             
-            # simple_controller - Node for spawning a simple_controller that use the JointGroupVelocityController and:
+            # simple_controller node
             # 1. subscribes to the bumperbot_control/cmd_vel topic (robot velocity) and 
             # 2. publishes on the simple_velocity_controller/commands (wheel velocity) 
 
@@ -106,9 +106,6 @@ def generate_launch_description():
         ]
     )
     
-
-
-
     return LaunchDescription([
         use_python_arg,
         wheel_radius_arg,

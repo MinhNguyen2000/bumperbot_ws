@@ -9,7 +9,13 @@
 
   <exec_depend>rclpy</exec_depend>
   <exec_depend>std_msgs</exec_depend>
-  <exec_depend>rcll_interfaces</exec_depend>
+  <exec_depend>rcl_interfaces</exec_depend>
+  <exec_depend>turtlesim</exec_depend>
+  <exec_depend>tf2_ros</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+
+  <!-- Dependencies for the message interface of the service server -->
+  <exec_depend>bumperbot_msgs</exec_depend>
   
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>

@@ -1,9 +1,15 @@
 <?xml version="1.0"?>
 
 <robot name="bumperbot" xmlns:xacro="http://ros.org/wiki/xacro">
+  <!--If ROS2 Humble then is_ignition = true, set to false if higher than ROS2 Humble-->
+  <!-- This is done to adapt the URDF model to the ROS2 version used-->
+  <xacro:arg name="is_ignition" default="true"/> 
 
   <!-- Include Gazebo Parameters -->
   <xacro:include filename="$(find bumperbot_description)/urdf/bumperbot_gazebo.xacro" />
+  
+  <!-- Include Gazebo Control Plugins (defined in the ros2 controller package) -->
+  <xacro:include filename="$(find bumperbot_description)/urdf/bumperbot_ros2_control.xacro"/>
 
   <link name="base_footprint"/>
   
