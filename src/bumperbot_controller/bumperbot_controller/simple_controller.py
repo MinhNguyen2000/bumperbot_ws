@@ -9,6 +9,8 @@ from sensor_msgs.msg import JointState
 import numpy as np
 from rclpy.time import Time
 from rclpy.constants import S_TO_NS
+import math
+
 class SimpleController(Node):
     def __init__(self):
         super().__init__("simple_controller")
@@ -29,6 +31,11 @@ class SimpleController(Node):
         self.left_wheel_prev_pos_ = 0.0
         self.right_wheel_prev_pos_ = 0.0
         self.prev_time_ = self.get_clock().now()
+
+        # Support variables for robot position and orientation
+        self.x_ = 0.0
+        self.y_ = 0.0
+        self.theta_ = 0.0
 
         # Publisher object to publish velocity commands to the wheels (message to simple_velocity_controller/commands)
         self.wheel_cmd_pub_ = self.create_publisher(
@@ -83,6 +90,7 @@ class SimpleController(Node):
         self.wheel_cmd_pub_.publish(wheel_speed_msg)
 
     def jointCallback(self, msg):
+        # Robot velocity calculation from encoder sensor measurement
         dp_right = msg.position[0] - self.right_wheel_prev_pos_
         dp_left = msg.position[1] - self.left_wheel_prev_pos_
         dt = Time.from_msg(msg.header.stamp) - self.prev_time_
@@ -97,7 +105,15 @@ class SimpleController(Node):
         linear = self.wheel_radius_/2 * (phi_right + phi_left)
         angular = self.wheel_radius_ / (self.wheel_separation_) * (phi_right - phi_left)
 
+        d_s = self.wheel_radius_ / 2 * (dp_right + dp_left)
+        d_theta = self.wheel_radius_/self.wheel_separation_*(dp_right - dp_left)
+
+        self.theta_ += d_theta
+        self.x_ += d_s * math.cos(self.theta_)
+        self.y_ += d_s * math.sin(self.theta_)
+
         self.get_logger().info("Linear: %f, angular: %f" % (linear,angular))
+        self.get_logger().info("x: %f, y: %f, theta; %f" % (self.x_, self.y_, self.theta_))
 
 def main():
     rclpy.init()
