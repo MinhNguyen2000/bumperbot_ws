@@ -4,7 +4,8 @@
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import Float64MultiArray
-from geometry_msgs.msg import TwistStamped              # For subscribing to TwistStamped messages from bumperbot_controller/cmd_vel
+from geometry_msgs.msg import TwistStamped, TransformStamped             
+# For subscribing to TwistStamped messages from bumperbot_controller/cmd_vel
 from sensor_msgs.msg import JointState
 import numpy as np
 from rclpy.time import Time
@@ -12,6 +13,7 @@ from rclpy.constants import S_TO_NS
 from nav_msgs.msg import Odometry 
 import math
 from tf_transformations import quaternion_from_euler
+from tf2_ros import TransformBroadcaster
 
 class SimpleController(Node):
     def __init__(self):
@@ -72,8 +74,12 @@ class SimpleController(Node):
         self.odom_msg_.pose.pose.orientation.x = 0.0
         self.odom_msg_.pose.pose.orientation.y = 0.0
         self.odom_msg_.pose.pose.orientation.z = 0.0
-        self.odom_msg_.pose.pose.orientation.w = 0.0
+        self.odom_msg_.pose.pose.orientation.w = 1.0
 
+        self.br_ = TransformBroadcaster(self)
+        self.transform_stamped_ = TransformStamped()
+        self.transform_stamped_.header .frame_id = "odom"
+        self.transform_stamped_.child_frame_id = "base_footprint"
 
         self.get_logger().info("The conversion matrix is %s" % self.speed_conversion_)
 
@@ -124,7 +130,7 @@ class SimpleController(Node):
         self.x_ += d_s * math.cos(self.theta_)
         self.y_ += d_s * math.sin(self.theta_)
 
-        # Updating the odometry message
+        # Updating the odometry message such as the current position/orientation(pose), and velocity (twist) of [base_footprint] wrt [odom]
         q = quaternion_from_euler(0, 0, self.theta_)
         self.odom_msg_.pose.pose.orientation.x = q[0]
         self.odom_msg_.pose.pose.orientation.y = q[1]
@@ -136,7 +142,17 @@ class SimpleController(Node):
         self.odom_msg_.twist.twist.linear.x = linear
         self.odom_msg_.twist.twist.angular.z = angular
 
+        # Updating the transformation between [base_footprint] and [odom]
+        self.transform_stamped_.transform.translation.x = self.x_
+        self.transform_stamped_.transform.translation.y = self.y_
+        self.transform_stamped_.transform.rotation.x = q[0]
+        self.transform_stamped_.transform.rotation.y = q[1]
+        self.transform_stamped_.transform.rotation.z = q[2]
+        self.transform_stamped_.transform.rotation.w = q[3]
+        self.transform_stamped_.header.stamp = self.get_clock().now().to_msg()
+
         self.odom_pub_.publish(self.odom_msg_)
+        self.br_.sendTransform(self.transform_stamped_)
 
 def main():
     rclpy.init()
