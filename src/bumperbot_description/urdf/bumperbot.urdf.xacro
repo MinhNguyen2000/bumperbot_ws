@@ -30,6 +30,15 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
+        <!-- Material definitions -->
+        <material name="Green">
+            <color rgba="0 0.7 0 1"/>
+        </material>
+        <material name="White">
+            <color rgba="0.7 0.7 0.7 1"/>
+        </material>
+
+        <!-- Base links -->
         <mesh filename="package://bumperbot_description/meshes/base_link.STL" />
       </geometry>
     </collision>
