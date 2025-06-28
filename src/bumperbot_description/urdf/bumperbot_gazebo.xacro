@@ -58,6 +58,7 @@
         <maxVel>0.1</maxVel>        
     </gazebo>
 
+    <!-- Gazebo plugin to connect with ros2_control and load the controller configuration-->
     <gazebo>
         <xacro:if value = "$(arg is_ignition)">
             <plugin filename="ign_ros2_control-system" name="ign_ros2_control::IgnitionROS2ControlPlugin">

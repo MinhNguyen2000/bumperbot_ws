@@ -66,6 +66,7 @@ def generate_launch_description():
         condition = UnlessCondition(use_simple_controller)
     )
 
+    # Nodes for spawning a simple_controller and a simple_velocity_controller to
     simple_controller = GroupAction(
         condition = IfCondition(use_simple_controller),
         actions = [
